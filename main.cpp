@@ -1,3 +1,6 @@
+// COMSC 210 | Lab 21 | 10/06/25
+// IDE: VS Code
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
