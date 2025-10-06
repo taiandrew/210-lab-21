@@ -12,6 +12,7 @@ private:
     int age;
     string name;
     string color;
+    // Default constructor will randomly choose one of these
     string names[CHOICES] = {"Billy", "Nanny", "Gruff", "Daisy", "Molly", "Jack", "Jill", "Luna", "Bella", "Max", "Charlie", "Lucy", "Maggie", "Sadie", "Rocky"};
     string colors[CHOICES] = {"White", "Black", "Brown", "Spotted", "Gray", "Golden", "Cream", "Tan", "Red", "Blue", "Green", "Yellow", "Purple", "Pink", "Orange"};
 public:
@@ -37,6 +38,7 @@ public:
 };
 
 class DoublyLinkedList {
+// Each node is a goat instance
 private:
     struct Node {
         Goat goat;
@@ -56,6 +58,7 @@ public:
     // constructor
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
+    // Add node to end
     void push_back(Goat g) {
         Node* newNode = new Node(g);
         if (!tail)  // if there's no tail, the list is empty
@@ -67,6 +70,7 @@ public:
         }
     }
 
+    // Add node to beginning
     void push_front(Goat g) {
         Node* newNode = new Node(g);
         if (!head)  // if there's no head, the list is empty
@@ -78,6 +82,7 @@ public:
         }
     }
 
+    // Insert node
     void insert_after(Goat g, int position) {
         if (position < 0) {
             cout << "Position must be >= 0." << endl;
@@ -109,6 +114,7 @@ public:
         temp->next = newNode;
     }
 
+    // Delete node by name of goat
     void delete_node(string name) {
         if (!head) return; // Empty list
 
