@@ -29,7 +29,8 @@ public:
     }
     // Print goat
     void print() {
-        cout << name << "(" << color << ", " << age << ")" << endl;
+        cout << "     ";
+        cout << name << " (" << color << ", " << age << ")" << endl;
     }
     // Getter for name
     string getName() const { return name; }
@@ -98,7 +99,7 @@ public:
             delete newNode;
             return;
         }
-
+        
         newNode->next = temp->next;
         newNode->prev = temp;
         if (temp->next)
