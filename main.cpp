@@ -1,7 +1,37 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
+const int CHOICES = 15;
+
+class Goat {
+private:
+    int age;
+    string name;
+    string color;
+    string names[CHOICES] = {"Billy", "Nanny", "Gruff", "Daisy", "Molly", "Jack", "Jill", "Luna", "Bella", "Max", "Charlie", "Lucy", "Maggie", "Sadie", "Rocky"};
+    string colors[CHOICES] = {"White", "Black", "Brown", "Spotted", "Gray", "Golden", "Cream", "Tan", "Red", "Blue", "Green", "Yellow", "Purple", "Pink", "Orange"};
+public:
+    // Default constructor
+    Goat() {
+        age = rand() % 20 + 1; // Age between 1 and 20
+        name = names[rand() % CHOICES];
+        color = colors[rand() % CHOICES];
+    }
+    // Parameterized constructor
+    Goat(int a, string n, string c) {
+        age = a;
+        name = n;
+        color = c;  
+    }
+    // Print goat
+    void print() {
+        cout << name << "(" << color << ", " << age << ")" << endl;
+    }
+};
 
 class DoublyLinkedList {
 private:
